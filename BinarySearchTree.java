@@ -91,4 +91,35 @@ public class BinarySearchTree<T extends Comparable <T>>
 			displayHelper(treeNode.rightChild);
 		}
 	}
+	
+	// Method to search element 
+	public boolean search(T nodeData)
+	{
+		TreeNode<T> temp=this.root;
+		System.out.println();
+		while(temp!=null)
+		{
+			if(nodeData.compareTo(temp.nodeData)>0)
+			{
+				temp=temp.rightChild;
+			}
+			else if(nodeData.compareTo(temp.nodeData)<0)
+			{
+				temp=temp.leftChild;
+			}
+			else if(nodeData.compareTo(temp.nodeData)==0)
+			{
+				break;
+			}
+		}
+		
+		if(temp==null)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
 }
